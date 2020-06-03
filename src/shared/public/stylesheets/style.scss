@@ -1,0 +1,219 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: #000;
+}
+
+input, button, select{
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #222;
+    position: sticky;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    >div{
+        display: inline-flex;
+        
+        &:nth-child(3){
+            justify-content: flex-end;
+        }
+        &.logo{
+            width: 120px;
+            align-items: center;
+            img{
+                width: 100%;
+            }
+            a{
+                display: flex;
+            }
+            
+            @media (max-width: 600px) {
+                width: 65px;
+                picture{
+                    display: flex;
+                }
+            }
+        }
+        &.search{
+            width: 100%;
+            max-width: 600px;
+            margin: 0px 20px;
+        }
+    }
+
+    .cover{
+        width: 40px;
+        height: 40px;
+        position: relative;
+        .img{
+            width       : 100%;
+            height      : 100%;
+            cursor      : pointer;
+            img{
+                width            : 100%;
+                height           : 100%;
+                object-fit       : cover;
+                border-radius    : 100px;
+            }
+        }
+
+        ul{
+            width: 280px;
+            margin-top: 5px;
+            background: #222222;
+            border: 1px solid #333;
+            border-radius: 3px;
+            position: absolute;
+            z-index: 2;
+            right: 0px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity .3s;
+            font-size: 0.8rem;
+            box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+            &[data-display="true"]{
+                visibility: initial;
+                opacity: 1;
+            }
+            a{
+                width: 100%;
+                padding: 0px 10px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                i, .text{
+                    display: inline-flex;
+                    align-items: center;
+                }
+                i{
+                    width: 30px;
+                    height: 30px;
+                    justify-content: center;
+                }
+                .text{
+                    margin-left: 10px;
+                }
+            }
+            >li{
+                width: 100%;
+                min-height: 45px;
+                display: flex;
+            }
+        }
+    }
+}
+
+form{
+    display: flex;
+    &.search{
+        width: 100%;
+        input{
+            width: 100%;
+            height: 40px;
+            padding: 0px 10px;
+            background: #000;
+            color: #fff;
+        }
+        button{
+            width: 70px;
+            padding-top: 3px;
+            background: #323232;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+
+main{
+    width: 100%;
+    min-height: 100%;
+    display: contents;
+}
+
+.no-data{
+    width: 100%;
+    height: calc(100% - 145px);
+    min-height: 200px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    opacity: .5;
+    font-size: 0.8rem;
+}
+
+#react-toast{
+    >span{
+        display: flex;
+        &.Toaster__manager-bottom-right{
+            bottom         : 10px !important;
+            right          : 10px !important;
+            flex-direction : column;
+            .Toaster__message{
+                margin-bottom: 5px;
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .Toaster__alert{
+            display         : flex;
+            align-items     : center;
+            position        : relative;
+            >div{
+                font-size      : 0.9rem;
+            }
+            .toaster-status-block{
+                width           : 100%;
+                min-height      : 45px;
+                padding         : 10px 45px 10px 15px;
+                display         : flex;
+                align-items     : center;
+                border-radius   : 4px;
+                background      : #313131;
+                color           : #fff;
+                box-shadow      : 0px 0px 5px rgba(0,0,0,.5);
+                &.toaster-success{
+                    color           : var(--success);
+                }
+                &.toaster-failure{
+                    color           : var(--failure);
+
+                }
+            }
+            .Toaster__alert_close{
+                width          : 20px;
+                height         : 20px;
+                min-height     : 20px;
+                align-items    : center;
+                justify-content: center;
+                position       : absolute;
+                z-index        : 2;
+                right          : 10px;
+            }
+        }
+    }
+}

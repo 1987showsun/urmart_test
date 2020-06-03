@@ -1,0 +1,46 @@
+.list-wrap{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    &[data-col="1"]{
+        >.item{
+            width: 100%;
+            &.video{
+                padding: 8px;
+            }
+        }
+    }
+    &[data-col="2"]{
+        padding: 5px;
+        >.item{
+            width: 50%;
+            &.video{
+                padding: 5px;
+            }
+        }
+    }
+    &[data-col="3"]{
+        >.item{
+            width: 33.3333%;
+            &.video{
+                padding: 10px;
+            }
+        }
+    }
+    &[data-col="4"]{
+        >.item{
+            width: 25%;
+            &.video{
+                padding: 10px;
+            }
+        }
+    }
+    &[data-col="5"]{
+        >.item{
+            width: 20%;
+            &.video{
+                padding: 10px;
+            }
+        }
+    }
+}

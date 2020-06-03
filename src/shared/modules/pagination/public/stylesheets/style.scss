@@ -1,0 +1,79 @@
+.pagination-wrap{
+    width              : 100%;
+    display            : flex;
+    flex-direction     : column;
+    margin             : 15px 0px 10px 0px;
+    justify-content    : center;
+    align-items        : center;
+    .pagination-current-wrap{
+        margin-bottom     : 10px;
+        font-size         : 0.9rem;
+        color             : #fff;
+    }
+    ul{
+        display           : flex;
+        list-style-type   : none;
+        >li{
+            min-width       : 30px;
+            height          : 30px;
+            margin-right    : 10px;
+            border-radius   : 100px;
+            display         : inline-flex;
+            align-items     : center;
+            justify-content : center;
+            user-select     : none;
+            cursor          : pointer;
+            font-size       : 0.9rem;
+            font-weight     : bold;
+            overflow        : hidden;
+            border          : 1px solid #ccc;
+            color: #fff;
+            &.item-null{
+                cursor          : default;
+                border          : none !important;
+                font-size       : 0.5rem;
+            }
+            &.pagination-item{
+                &:hover{
+                    border-color   : #fe0202;
+                }
+                &.active{
+                    color          : #fff;
+                    background     : #fe0202;
+                    border-color   : #fe0202;
+                }
+            }
+            &.arrows{
+                font-size      : 0.8rem;
+                i{
+                    display       : inline-flex;
+                    align-items   : center;
+                    font-size     : 0.7rem;
+                }
+                &.disabled{
+                    cursor         : not-allowed;
+                    opacity        : 0.3;
+                }
+            }
+            &.jumper-item{
+                
+            }
+            &:last-child{
+                margin-right   : 0px;
+            }
+        }
+    }
+}
+
+.pagination-input-box{
+    height: 100%;
+    input{
+        max-width       : 50px;
+        appearance      : none;
+        height          : 100%;
+        border          : none;
+        text-align      : center;
+        font-size       : 0.9rem;
+        font-weight     : bold;
+    }
+}
